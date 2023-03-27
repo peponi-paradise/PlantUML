@@ -1,7 +1,3 @@
-# PlantUML - Sequence diagram
-
-<br>
-
 ## 1. Introduction
 
 <br>
@@ -46,7 +42,7 @@ A<-B: Deactivate done
 3. 시퀀스 다이어그램을 통해 아래 항목 등을 파악할 수 있다.
     - 작업 항목
     - 객체간 관계
-    - 각 객체의 작업 순서 및 라이프타임<br>
+    - 각 객체의 작업 순서 및 라이프타임
     $\vdots$
 
 <br><br>
@@ -66,23 +62,30 @@ A<-B: Deactivate done
 
 <tr>
 <td>
-@startuml<br><br>
-participant A<br>
-participant B<br>
-<br>
-A -> B : Hello world!<br>
-A <- B : Hello!<br><br>
-@enduml
-</td>
-<td>
 
-```plantuml
+```text
 @startuml
+
 participant A
 participant B
 
 A->B: Hello world!
 A<--B: Hello!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+participant A
+participant B
+
+A->B: Hello world!
+A<--B: Hello!
+
 @enduml
 ```
 </td>
@@ -104,10 +107,6 @@ A<--B: Hello!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -115,21 +114,10 @@ A<--B: Hello!
 
 <tr>
 <td>
-@startuml<br><br>
-participant P<br>
-actor A<br>
-boundary B<br>
-control C<br>
-entity E<br>
-database D<br>
-collections CO<br>
-queue Q<br><br>
-@enduml
-</td>
-<td>
 
-```plantuml
+```text
 @startuml
+
 participant P
 actor A
 boundary B
@@ -138,6 +126,24 @@ entity E
 database D
 collections CO
 queue Q
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+participant P
+actor A
+boundary B
+control C 
+entity E
+database D
+collections CO
+queue Q
+
 @enduml
 ```
 </td>
@@ -160,10 +166,6 @@ queue Q
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -172,15 +174,21 @@ queue Q
 <tr>
 <td>
 
-@startuml<br><br>
-participant "P()" as p<br><br>
+```text
+@startuml
+
+participant "P()" as p
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 participant "P()" as p
+
 @enduml
 ```
 </td>
@@ -199,10 +207,6 @@ participant "P()" as p
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -211,21 +215,27 @@ participant "P()" as p
 <tr>
 <td>
 
-@startuml<br><br>
-participant Participant as p<br>
-actor Actor as a<br>
+```text
+@startuml
 
-p -> a : hello<br><br>
+participant Participant as p
+actor Actor as a
+
+p -> a : hello
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 participant Participant as p
 actor Actor as a
 
 p -> a : hello
+
 @enduml
 ```
 </td>
@@ -244,10 +254,6 @@ p -> a : hello
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -256,19 +262,25 @@ p -> a : hello
 <tr>
 <td>
 
-@startuml<br><br>
-participant P order 3<br>
-actor A order 1<br>
-boundary B order 2<br><br>
+```text
+@startuml
+
+participant P order 3
+actor A order 1
+boundary B order 2
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 participant P order 3
 actor A order 1
 boundary B order 2
+
 @enduml
 ```
 </td>
@@ -285,10 +297,6 @@ boundary B order 2
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -297,19 +305,25 @@ boundary B order 2
 <tr>
 <td>
 
-@startuml<br><br>
-participant P #mediumseagreen<br>
-actor A #magenta<br>
-boundary B #13ab32<br><br>
+```text
+@startuml
+
+participant P #mediumseagreen
+actor A #magenta
+boundary B #13ab32
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 participant P #mediumseagreen
 actor A #magenta
 boundary B #13ab32
+
 @enduml
 ```
 </td>
@@ -328,10 +342,6 @@ boundary B #13ab32
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -340,23 +350,29 @@ boundary B #13ab32
 <tr>
 <td>
 
-@startuml<br><br>
-actor A [<br>
-    =Upper<br>
-    ----<br>
-    ""Lower""<br>
-]<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 actor A [
     =Upper
     ----
     ""Lower""
 ]
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+actor A [
+    =Upper
+    ----
+    ""Lower""
+]
+
 @enduml
 ```
 </td>
@@ -375,10 +391,6 @@ actor A [
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -387,30 +399,35 @@ actor A [
 <tr>
 <td>
 
-@startuml<br><br>
-a -> b : message<br>
-a --> b<br>
-a <-> b<br>
-a ->x b<br>
-a ->o b<br>
-a -\ b<br>
-a -/ b<br>
-a ->> b<br>
-a -\\ b<br>
-a -// b<br>
-a -> a<br>
-a ->(20) b : Slanted<br>
+```text
+@startuml
 
-?-> b : Short incoming<br>
-[-> b : Long incoming<br>
-a ->? : Short outgoing<br>
-a ->] : Long outgoing<br><br>
+a -> b : message
+a --> b
+a <-> b
+a ->x b
+a ->o b
+a -\ b
+a -/ b
+a ->> b
+a -\\ b
+a -// b
+a -> a
+a ->(20) b : Slanted
+
+?-> b : Short incoming
+[-> b : Long incoming
+a ->? : Short outgoing
+a ->] : Long outgoing
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 a -> b : message
 a --> b
 a <-> b
@@ -452,10 +469,6 @@ a-[hidden]>b:Make it very long long long long
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -464,17 +477,23 @@ a-[hidden]>b:Make it very long long long long
 <tr>
 <td>
 
-@startuml<br><br>
-a -[#cyan]> b : Change by name<br>
-a -[#1204fb]> b : Change by code<br><br>
+```text
+@startuml
+
+a -[#cyan]> b : Change by name
+a -[#1204fb]> b : Change by code
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 a -[#cyan]> b : Change by name
 a -[#1204fb]> b : Change by code
+
 @enduml
 ```
 </td>
@@ -493,10 +512,6 @@ a -[#1204fb]> b : Change by code
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -505,15 +520,21 @@ a -[#1204fb]> b : Change by code
 <tr>
 <td>
 
-@startuml<br><br>
-a -> b : This is\nvery long and\nmultiline\nmessage<br><br>
+```text
+@startuml
+
+a -> b : This is\nvery long and\nmultiline\nmessage
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 a -> b : This is\nvery long and\nmultiline\nmessage
+
 @enduml
 ```
 </td>
@@ -533,10 +554,6 @@ a -> b : This is\nvery long and\nmultiline\nmessage
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -545,39 +562,9 @@ a -> b : This is\nvery long and\nmultiline\nmessage
 <tr>
 <td>
 
-@startuml<br><br>
-autonumber<br>
-a -> b : 1st<br>
-a -> b : 2nd<br>
-
-autonumber 10<br>
-a -> b : 10th<br>
-
-autonumber 20 10<br>
-a -> b : 20th<br>
-a -> b : 30th<br>
-
-autonumber stop<br>
-a -> b : Temp stop<br>
-autonumber resume 1<br>
-a -> b : Resume<br>
-a -> b : Next<br>
-
-autonumber 1.1.1<br>
-a -> b : Change format<br>
-a -> b : Next<br>
-autonumber inc A<br>
-a -> b : Increase first<br>
-autonumber inc B<br>
-a -> b : Increase second<br>
-
-a -> b : Number of this time is %autonumber%<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 autonumber
 a -> b : 1st
 a -> b : 2nd
@@ -604,6 +591,42 @@ autonumber inc B
 a -> b : Increase second
 
 a -> b : Number of this time is %autonumber%
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+autonumber
+a -> b : 1st
+a -> b : 2nd
+
+autonumber 10
+a -> b : 10th
+
+autonumber 20 10
+a -> b : 20th
+a -> b : 30th
+
+autonumber stop
+a -> b : Temp stop
+autonumber resume 1
+a -> b : Resume
+a -> b : Next
+
+autonumber 1.1.1
+a -> b : Change format
+a -> b : Next
+autonumber inc A
+a -> b : Increase first
+autonumber inc B
+a -> b : Increase second
+
+a -> b : Number of this time is %autonumber%
+
 @enduml
 ```
 </td>
@@ -630,10 +653,6 @@ a -> b : Number of this time is %autonumber%
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -642,30 +661,9 @@ a -> b : Number of this time is %autonumber%
 <tr>
 <td>
 
-@startuml<br><br>
-a -> b : Activate<br>
-activate b<br>
-a -> b : Deactivate<br>
-deactivate b<br>
-
-b -> c ++ : Activate<br>
-c -> b -- : Deactivate<br>
-
-a -> b ++ : Activate<br>
-a -> b ++ : Additional active<br>
-return Return<br>
-
-b -> c --++ : Deactivate and activate<br>
-
-b -> c : Destroy<br>
-destroy c<br>
-a -> b !! : Destroy<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 a -> b : Activate
 activate b
 a -> b : Deactivate
@@ -683,6 +681,33 @@ b -> c --++ : Deactivate and activate
 b -> c : Destroy
 destroy c
 a -> b !! : Destroy
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+a -> b : Activate
+activate b
+a -> b : Deactivate
+deactivate b
+
+b -> c ++ : Activate
+c -> b -- : Deactivate
+
+a -> b ++ : Activate
+a -> b ++ : Additional active
+return Return
+
+b -> c --++ : Deactivate and activate
+
+b -> c : Destroy
+destroy c
+a -> b !! : Destroy
+
 @enduml
 ```
 </td>
@@ -703,10 +728,6 @@ a -> b !! : Destroy
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -715,21 +736,27 @@ a -> b !! : Destroy
 <tr>
 <td>
 
-@startuml<br><br>
-a -> b ++ #crimson : Activate<br>
-b -> c ++ #34ab22 : Activate<br>
-return end<br>
-return end<br><br>
+```text
+@startuml
+
+a -> b ++ #crimson : Activate
+b -> c ++ #34ab22 : Activate
+return end
+return end
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 a -> b ++ #crimson : Activate
 b -> c ++ #34ab22 : Activate
 return end
 return end
+
 @enduml
 ```
 </td>
@@ -751,10 +778,6 @@ return end
 2. 여러 줄의 노트를 추가하는 경우에는 반드시 `end note` 사용
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -763,35 +786,9 @@ return end
 <tr>
 <td>
 
-@startuml<br><br>
-a -> b : Message<br>
-note left : first note<br>
-note right : second note<br>
-a ->b : Message<br>
-note left<br>
-Multi<br>
-line<br>
-note<br>
-end note<br>
-
-note over a : Note over a<br>
-note left of b : Note left of b<br>
-note right of a : Note right of a<br>
-note right of a : Note aligned<br>
-/ note right of b : Note aligned<br>
-
-note over a,b<br>
-Note over<br>
-selected<br>
-objects<br>
-end note<br>
-note across : Note over all objects<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 a -> b : Message
 note left : first note
 note right : second note
@@ -814,6 +811,38 @@ selected
 objects
 end note
 note across : Note over all objects
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+a -> b : Message
+note left : first note
+note right : second note
+a ->b : Message
+note left
+Multi
+line
+note
+end note
+
+note over a : Note over a
+note left of b : Note left of b
+note right of a : Note right of a
+note right of a : Note aligned
+/ note right of b : Note aligned 
+
+note over a,b
+Note over
+selected
+objects
+end note
+note across : Note over all objects
+
 @enduml
 ```
 </td>
@@ -837,10 +866,6 @@ note across : Note over all objects
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -849,17 +874,23 @@ note across : Note over all objects
 <tr>
 <td>
 
-@startuml<br><br>
-hnote over a : hnote<br>
-rnote over a : rnote<br><br>
+```text
+@startuml
+
+hnote over a : hnote
+rnote over a : rnote
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 hnote over a : hnote
 rnote over a : rnote
+
 @enduml
 ```
 </td>
@@ -878,10 +909,6 @@ rnote over a : rnote
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -890,17 +917,23 @@ rnote over a : rnote
 <tr>
 <td>
 
-@startuml<br><br>
-note over a #skyblue : Skyblue<br>
-note over a #faacfb : Color code<br><br>
+```text
+@startuml
+
+note over a #skyblue : Skyblue
+note over a #faacfb : Color code
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 note over a #skyblue : Skyblue
 note over a #faacfb : Color code
+
 @enduml
 ```
 </td>
@@ -921,10 +954,6 @@ note over a #faacfb : Color code
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -933,19 +962,25 @@ note over a #faacfb : Color code
 <tr>
 <td>
 
-@startuml<br><br>
-mainframe main<br>
+```text
+@startuml
 
-a -> b : Hello world!<br><br>
+mainframe main
+
+a -> b : Hello world!
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 mainframe main
 
 a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -959,14 +994,12 @@ a -> b : Hello world!
 
 1. `newpage`를 사용하여 다이어그램 페이지 추가
 2. `newpage` 뒤에 새 페이지의 [`Title`](#353-title) 입력 가능
+3. <span style="color:crimson">VSCode에서 Markdown으로 PlantUML 작성 후 HTML 뽑아낼 시 다음 페이지들 정상 출력이 불가
+    따로 이미지로 붙여주지 않는 한 uml 분리 권장</span>
 
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -975,22 +1008,9 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-a -> b : Hello world!<br>
-
-newpage<br>
-
-a -> b : Next page!<br>
-
-newpage Last page<br>
-
-a -> b : Last page!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 a -> b : Hello world!
 
 newpage
@@ -1000,6 +1020,25 @@ a -> b : Next page!
 newpage Last page
 
 a -> b : Last page!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+a -> b : Hello world!
+
+newpage
+
+a -> b : Next page!
+
+newpage Last page
+
+a -> b : Last page!
+
 @enduml
 ```
 </td>
@@ -1020,10 +1059,6 @@ a -> b : Last page!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1032,19 +1067,25 @@ a -> b : Last page!
 <tr>
 <td>
 
-@startuml<br><br>
-title MyTitle<br>
-
-a -> b : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 title MyTitle
 
 a -> b : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+title MyTitle
+
+a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1053,19 +1094,25 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-title My\nmulti line\ntitle<br>
-
-a -> b : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 title My\nmulti line\ntitle
 
 a -> b : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+title My\nmulti line\ntitle
+
+a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1074,20 +1121,9 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-title<br>
-My<br>
-multi line<br>
-title<br>
-end title<br>
-
-a -> b : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 title
 My
 multi line
@@ -1095,6 +1131,23 @@ title
 end title
 
 a -> b : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+title
+My
+multi line
+title
+end title
+
+a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1110,14 +1163,12 @@ a -> b : Hello world!
 
 1. `header`, `footer`를 이용하여 머리말, 꼬리말 표시
 2. `%page%`, `%lastpage%`를 이용하여 현재 페이지 및 전체 페이지 수 표시 가능
+3. <span style="color:crimson">VSCode에서 Markdown으로 PlantUML 작성 후 HTML 뽑아낼 시 다음 페이지들 정상 출력이 불가
+    따로 이미지로 붙여주지 않는 한 uml 분리 권장</span>
 
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1126,25 +1177,31 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-header Header<br>
-footer Page %page% of %lastpage%<br>
-
-title MyTitle<br>
-
-a -> b : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 header Header
 footer Footer
 
 title MyTitle
 
 a -> b : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+header Header
+footer Footer
+
+title MyTitle
+
+a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1153,25 +1210,9 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-header Header<br>
-footer Page %page% of %lastpage%<br>
-
-a -> b : Hello world!<br>
-
-newpage<br>
-
-a -> b : Next page!<br>
-
-newpage Last page<br>
-
-a -> b : Last page!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 header Header
 footer Page %page% of %lastpage%
 
@@ -1184,6 +1225,28 @@ a -> b : Next page!
 newpage Last page
 
 a -> b : Last page!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+header Header
+footer Page %page% of %lastpage%
+
+a -> b : Hello world!
+
+newpage
+
+a -> b : Next page!
+
+newpage Last page
+
+a -> b : Last page!
+
 @enduml
 ```
 </td>
@@ -1204,10 +1267,6 @@ a -> b : Last page!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1216,23 +1275,29 @@ a -> b : Last page!
 <tr>
 <td>
 
-@startuml<br><br>
-participant a<br>
-
-create b<br>
-a -> b : Hello world!<br>
-a -> c ** : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 participant a
 
 create b
 a -> b : Hello world!
 a -> c ** : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+participant a
+
+create b
+a -> b : Hello world!
+a -> c ** : Hello world!
+
 @enduml
 ```
 </td>
@@ -1252,10 +1317,6 @@ a -> c ** : Hello world!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1264,24 +1325,9 @@ a -> c ** : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-box<br>
-participant a<br>
-end box<br>
-
-box "Others" #mediumseagreen<br>
-participant b<br>
-participant c<br>
-end box<br>
-
-a -> b : Hello world!<br>
-a -> c : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 box
 participant a
 end box
@@ -1293,6 +1339,27 @@ end box
 
 a -> b : Hello world!
 a -> c : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+box
+participant a
+end box
+
+box "Others" #mediumseagreen
+participant b
+participant c
+end box
+
+a -> b : Hello world!
+a -> c : Hello world!
+
 @enduml
 ```
 </td>
@@ -1312,10 +1379,6 @@ a -> c : Hello world!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1324,23 +1387,29 @@ a -> c : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-participant a << StereoType >><br>
-participant b << (S,#12fcba) >><br>
-participant c << (S,#12fcba) StereoType >><br>
-
-a -> b : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 participant a << StereoType >>
 participant b << (S,#12fcba) >>
 participant c << (S,#12fcba) StereoType >>
 
 a -> b : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+participant a << StereoType >>
+participant b << (S,#12fcba) >>
+participant c << (S,#12fcba) StereoType >>
+
+a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1359,10 +1428,6 @@ a -> b : Hello world!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1371,19 +1436,25 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-hide footbox<br>
+```text
+@startuml
 
-a -> b : Hello world!<br><br>
+hide footbox
+
+a -> b : Hello world!
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 hide footbox
 
 a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1402,10 +1473,6 @@ a -> b : Hello world!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1414,23 +1481,29 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-participant a<br>
-participant b<br>
-participant c<br>
-
-a -> b : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 participant a
 participant b
 participant c
 
 a -> b : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+participant a
+participant b
+participant c
+
+a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1439,20 +1512,9 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-hide unlinked<br>
-
-participant a<br>
-participant b<br>
-participant c<br>
-
-a -> b : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 hide unlinked
 
 participant a
@@ -1460,6 +1522,23 @@ participant b
 participant c
 
 a -> b : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+hide unlinked
+
+participant a
+participant b
+participant c
+
+a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1480,10 +1559,6 @@ a -> b : Hello world!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1492,23 +1567,9 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-a -> b : Hello world!<br>
-
-|||<br>
-||50||<br>
-
-...<br>
-... Some times later ...<br>
-
-====<br>
-== Clear ==<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 a -> b : Hello world!
 
 |||
@@ -1519,6 +1580,26 @@ a -> b : Hello world!
 
 ====
 == Clear ==
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+a -> b : Hello world!
+
+|||
+||50||
+
+...
+... Some times later ...
+
+====
+== Clear ==
+
 @enduml
 ```
 </td>
@@ -1546,10 +1627,6 @@ a -> b : Hello world!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1558,39 +1635,9 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-a -> b : Hello world!<br>
-
-alt case 1<br>
-    b -> a : Hello world!<br>
-
-else case 2<br>
-    opt send message<br>
-        a -> b : Hello?<br>
-    end<br>
-
-else case 3<br>
-    loop retry<br>
-        a -> b : Hello?<br>
-    end<br>
-
-else case 4<br>
-    group Find new friends [Who will be?]<br>
-        a -> c : Hello world!<br>
-    end<br>
-end<br>
-
-alt#skyblue #31a2f3 Add color<br>
-    a -> b : Hello world!<br>
-else #af3a7b Color case<br>
-    a -> c : Hello world!<br>
-end<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 a -> b : Hello world!
 
 alt case 1
@@ -1617,6 +1664,42 @@ alt#skyblue #31a2f3 Add color
 else #af3a7b Color case
     a -> c : Hello world!
 end
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+a -> b : Hello world!
+
+alt case 1
+    b -> a : Hello world!
+
+else case 2
+    opt send message
+        a -> b : Hello?
+    end
+
+else case 3
+    loop retry
+        a -> b : Hello?
+    end
+
+else case 4
+    group Find new friends [Who will be?]
+        a -> c : Hello world!
+    end
+end
+
+alt#skyblue #31a2f3 Add color
+    a -> b : Hello world!
+else #af3a7b Color case
+    a -> c : Hello world!
+end
+
 @enduml
 ```
 </td>
@@ -1641,10 +1724,6 @@ end
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1653,19 +1732,25 @@ end
 <tr>
 <td>
 
-@startuml<br><br>
-!theme mars<br>
+```text
+@startuml
 
-a -> b : Hello world!<br><br>
+!theme mars
+
+a -> b : Hello world!
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 !theme mars
 
 a -> b : Hello world!
+
 @enduml
 ```
 </td>
@@ -1674,9 +1759,11 @@ a -> b : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-help themes<br><br>
+```text
+@startuml
+help themes
 @enduml
+```
 </td>
 <td>
 
@@ -1704,10 +1791,6 @@ help themes
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1716,9 +1799,11 @@ help themes
 <tr>
 <td>
 
-@startuml<br><br>
-skinparameters<br><br>
+```text
+@startuml
+skinparameters
 @enduml
+```
 </td>
 <td>
 
@@ -1733,21 +1818,27 @@ skinparameters
 <tr>
 <td>
 
-@startuml<br><br>
-skinparam sequenceMessageAlign center<br>
+```text
+@startuml
 
-a -> b : Hello world!<br>
-b -> a : Hello world, too!<br><br>
+skinparam sequenceMessageAlign center
+
+a -> b : Hello world!
+b -> a : Hello world, too!
+
 @enduml
+```
 </td>
 <td>
 
 ```plantuml
 @startuml
+
 skinparam sequenceMessageAlign center
 
 a -> b : Hello world!
 b -> a : Hello world, too!
+
 @enduml
 ```
 </td>
@@ -1756,27 +1847,9 @@ b -> a : Hello world, too!
 <tr>
 <td>
 
-@startuml<br><br>
-skinparam ParticipantPadding 30<br>
-skinparam BoxPadding 20<br>
-
-box<br>
-participant a<br>
-end box<br>
-
-box "Others" #mediumseagreen<br>
-participant b<br>
-participant c<br>
-end box<br>
-
-a -> b : Hello world!<br>
-a -> c : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 skinparam ParticipantPadding 30
 skinparam BoxPadding 20
 
@@ -1791,6 +1864,30 @@ end box
 
 a -> b : Hello world!
 a -> c : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+skinparam ParticipantPadding 30
+skinparam BoxPadding 20
+
+box
+participant a
+end box
+
+box "Others" #mediumseagreen
+participant b
+participant c
+end box
+
+a -> b : Hello world!
+a -> c : Hello world!
+
 @enduml
 ```
 </td>
@@ -1814,10 +1911,6 @@ a -> c : Hello world!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1826,37 +1919,47 @@ a -> c : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-!pragma teoz true<br>
-
-box<br>
-participant a<br>
-box "Others" #mediumseagreen<br>
-participant b<br>
-participant c<br>
-end box<br>
-end box<br>
-
-a -> b : Hello world!<br>
-a -> c : Hello world!<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 !pragma teoz true
 
 box
 participant a
+
 box "Others" #mediumseagreen
 participant b
 participant c
+
 end box
 end box
 
 a -> b : Hello world!
 a -> c : Hello world!
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+!pragma teoz true
+
+box
+participant a
+
+box "Others" #mediumseagreen
+participant b
+participant c
+
+end box
+end box
+
+a -> b : Hello world!
+a -> c : Hello world!
+
 @enduml
 ```
 </td>
@@ -1875,10 +1978,6 @@ a -> c : Hello world!
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1887,20 +1986,9 @@ a -> c : Hello world!
 <tr>
 <td>
 
-@startuml<br><br>
-!pragma teoz true<br>
-
-a -> b : Hello world!<br>
-& b -> c : Hello world!<br>
-
-note left of a : I'm a<br>
-& note right of b : I'm b<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 !pragma teoz true
 
 a -> b : Hello world!
@@ -1908,6 +1996,23 @@ a -> b : Hello world!
 
 note left of a : I'm a
 & note right of b : I'm b
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+!pragma teoz true
+
+a -> b : Hello world!
+& b -> c : Hello world!
+
+note left of a : I'm a
+& note right of b : I'm b
+
 @enduml
 ```
 </td>
@@ -1926,10 +2031,6 @@ note left of a : I'm a
 <br>
 
 <table>
-<colgroup>
-    <col style="width: 30%">
-    <col style="width: 50%">
-<colgroup>
 
 <tr>
 <th>Code</th><th>Render</th>
@@ -1938,25 +2039,35 @@ note left of a : I'm a
 <tr>
 <td>
 
-@startuml<br><br>
-!pragma teoz true<br>
-
-{start} a -> b : Hello world!<br>
-{end} b -> a : Hi!<br>
-{start} <-> {end} : Duration<br><br>
-@enduml
-</td>
-<td>
-
-```plantuml
+```text
 @startuml
+
 !pragma teoz true
 skinparam responseMessageBelowArrow true
 
 {start} a -> b : Hello world!
 ||40||
 {end} b -> a : Hi!
+
 {start} <-> {end} : Duration
+
+@enduml
+```
+</td>
+<td>
+
+```plantuml
+@startuml
+
+!pragma teoz true
+skinparam responseMessageBelowArrow true
+
+{start} a -> b : Hello world!
+||40||
+{end} b -> a : Hi!
+
+{start} <-> {end} : Duration
+
 @enduml
 ```
 </td>
