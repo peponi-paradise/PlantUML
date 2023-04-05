@@ -1,0 +1,715 @@
+<!DOCTYPE html><html><head>
+      <title>PlantUML - Use case diagram</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\DH\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="1-introduction">1. Introduction</h2>
+
+<br>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="537px" preserveAspectRatio="none" style="width:259px;height:537px;background:#FFFFFF;" version="1.1" viewBox="0 0 259 537" width="259px" zoomAndPan="magnify"><defs/><g><!--cluster Game--><g id="cluster_Game"><rect fill="none" height="524" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="174" x="79" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="40" x="146" y="23.5332">Game</text></g><!--cluster Class--><g id="cluster_Class"><path d="M105.5,51 L144.5,51 A3.75,3.75 0 0 1 147,53.5 L154,74.6094 L226.5,74.6094 A2.5,2.5 0 0 1 229,77.1094 L229,264.5 A2.5,2.5 0 0 1 226.5,267 L105.5,267 A2.5,2.5 0 0 1 103,264.5 L103,53.5 A2.5,2.5 0 0 1 105.5,51 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="103" x2="154" y1="74.6094" y2="74.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="38" x="107" y="67.5332">Class</text></g><!--cluster Behavior--><g id="cluster_Behavior"><path d="M115,291 L180,291 A3.75,3.75 0 0 1 182.5,293.5 L189.5,314.6094 L217,314.6094 A2.5,2.5 0 0 1 219.5,317.1094 L219.5,504.5 A2.5,2.5 0 0 1 217,507 L115,507 A2.5,2.5 0 0 1 112.5,504.5 L112.5,293.5 A2.5,2.5 0 0 1 115,291 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="112.5" x2="189.5" y1="314.6094" y2="314.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="64" x="116.5" y="307.5332">Behavior</text></g><g id="elem_Gimli"><ellipse cx="165.9056" cy="102.9517" fill="#F1F1F1" rx="33.4056" ry="15.4517" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="150.4056" y="106.6802">Gimli</text></g><g id="elem_Gandalf"><ellipse cx="165.9051" cy="168.97" fill="#F1F1F1" rx="46.9051" ry="15.47" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="139.2227" y="173.1764">Gandalf</text></g><g id="elem_Legolas"><ellipse cx="165.9051" cy="234.97" fill="#F1F1F1" rx="46.9051" ry="15.47" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="139.2227" y="239.1764">Legolas</text></g><g id="elem_h"><ellipse cx="165.799" cy="342.9517" fill="#F1F1F1" rx="22.799" ry="15.4517" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="16" x="157.799" y="346.6802">Hit</text></g><g id="elem_m"><ellipse cx="166.1482" cy="408.9517" fill="#F1F1F1" rx="37.6482" ry="15.4517" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="147.6482" y="412.6802">Magic</text></g><g id="elem_a"><ellipse cx="166.234" cy="474.9517" fill="#F1F1F1" rx="36.234" ry="15.4517" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="148.734" y="478.6802">Avoid</text></g><!--entity p1--><g id="elem_p1"><ellipse cx="32.5" cy="121.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M32.5,129.5 L32.5,156.5 M19.5,137.5 L45.5,137.5 M32.5,156.5 L19.5,171.5 M32.5,156.5 L45.5,171.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="6" y="187.5332">Person1</text></g><!--entity p2--><g id="elem_p2"><ellipse cx="32.5" cy="282.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M32.5,290.5 L32.5,317.5 M19.5,298.5 L45.5,298.5 M32.5,317.5 L19.5,332.5 M32.5,317.5 L45.5,332.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="6" y="348.5332">Person2</text></g><!--link p1 to Gimli--><g id="link_p1_Gimli"><path d="M59.23,140.76 C63.16,139.12 67.17,137.49 71,136 C91.48,128.04 114.79,119.86 133.07,113.63 " fill="none" id="p1-to-Gimli" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="138.09,111.92,128.2836,111.0067,133.3523,113.5183,130.8408,118.587,138.09,111.92" style="stroke:#181818;stroke-width:1.0;"/></g><!--link p1 to h--><g id="link_p1_h"><path d="M40.37,191 C45.87,214.53 55.34,244.26 71,267 C90.11,294.75 122.23,317.59 143.52,330.76 " fill="none" id="p1-to-h" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="147.89,333.42,142.282,325.3237,143.619,330.8203,138.1224,332.1573,147.89,333.42" style="stroke:#181818;stroke-width:1.0;"/></g><!--link p2 to Gandalf--><g id="link_p2_Gandalf"><path d="M38.03,273.81 C42.68,250.23 52.06,221.17 71,202 C83.45,189.4 100.98,181.6 117.54,176.78 " fill="none" id="p2-to-Gandalf" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="122.64,175.37,112.9013,173.9009,117.8192,176.6964,115.0236,181.6143,122.64,175.37" style="stroke:#181818;stroke-width:1.0;"/></g><!--link p2 to m--><g id="link_p2_m"><path d="M51.13,352.24 C56.5,360.98 63.12,369.55 71,376 C86.66,388.81 107.64,396.81 125.81,401.71 " fill="none" id="p2-to-m" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="130.85,403.01,123.1438,396.877,126.0104,401.7537,121.1337,404.6203,130.85,403.01" style="stroke:#181818;stroke-width:1.0;"/></g><!--SRC=[POun3i8m34NtdC8Z7Jgq1q021XX0uWfMwYOMILCbeGlgtKdQ2bJ5a_EUOtz3VOJemBFI4Jhs92ExGGYKqNbuaWzkQ003ZCsEjGjhXSW_S526u8gMFW9IZIXVg0Wk1aDOKQvt88aX3R8rN58SEZHzmU-aNDgpy7ct_amQ9tQ-l73ZcFFfGZnGiSpA5keqEUwomktKBCJOG5qVuR0ahdvFdTfsCslgFx2L-080]--></g></svg></p><br>
+<ol>
+<li><code>Use case diagram</code>&#xC774;&#xB780;, &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xC218;&#xD589;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xC5D0; &#xB300;&#xD55C; &#xBAA8;&#xB378;&#xB9C1;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.<br>
+&#xD2B9;&#xD788; <code>High level</code> &#xC601;&#xC5ED;&#xC5D0;&#xC11C;&#xC758; &#xAE30;&#xB2A5;&#xACFC; &#xBC94;&#xC704;&#xB97C; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;.</li>
+<li>&#xC0AC;&#xC6A9;&#xC790;&#xB97C; &#xC911;&#xC2EC;&#xC73C;&#xB85C; &#xC2DC;&#xC2A4;&#xD15C;&#xACFC;&#xC758; &#xC0C1;&#xD638;&#xC791;&#xC6A9;&#xC744; &#xC694;&#xC57D;&#xD558;&#xBBC0;&#xB85C;, &#xC790;&#xC138;&#xD55C; &#xC815;&#xBCF4;&#xB294; &#xB098;&#xD0C0;&#xB098;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xAE30;&#xBCF8;&#xC801;&#xC778; &#xB2E4;&#xC774;&#xC5B4;&#xADF8;&#xB7A8; &#xADF8;&#xB9AC;&#xAE30; &#xBC29;&#xBC95;&#xC740; <code>Sequence diagram</code>&#xC73C;&#xB85C;&#xBD80;&#xD130; &#xCD9C;&#xBC1C;&#xD55C;&#xB2E4;.</li>
+</ol>
+<br>
+<h2 class="mume-header" id="2-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">2. &#xAE30;&#xBCF8; &#xC0AC;&#xC6A9;&#xBC95;</h2>
+
+<br>
+<ol>
+<li>Actor &#xC815;&#xC758; : <code>:&#xC774;&#xB984;:</code> or <code>actor &#xC774;&#xB984;</code></li>
+<li>Use case &#xC815;&#xC758; : <code>(&#xC774;&#xB984;)</code> or <code>usecase &#xC774;&#xB984;</code></li>
+</ol>
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+actor A
+:B:
+
+usecase C
+(D)
+
+A -&gt; D
+B -&gt; C : Text
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="88px" preserveAspectRatio="none" style="width:271px;height:88px;background:#FFFFFF;" version="1.1" viewBox="0 0 271 88" width="271px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="19" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M19,22 L19,49 M6,30 L32,30 M19,49 L6,64 M19,49 L32,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="14.5" y="80.0332">A</text></g><!--entity B--><g id="elem_B"><ellipse cx="153" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M153,22 L153,49 M140,30 L166,30 M153,49 L140,64 M153,49 L166,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="148.5" y="80.0332">B</text></g><g id="elem_C"><ellipse cx="247.0605" cy="44.4484" fill="#F1F1F1" rx="18.5605" ry="15.4484" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="242.0605" y="48.1769">C</text></g><g id="elem_D"><ellipse cx="86.0605" cy="44.4484" fill="#F1F1F1" rx="18.5605" ry="15.4484" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="81.0605" y="48.1769">D</text></g><!--link A to D--><g id="link_A_D"><path d="M32.61,44.5 C42.44,44.5 52.26,44.5 62.09,44.5 " fill="none" id="A-to-D" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="67.23,44.5,58.23,40.5,62.23,44.5,58.23,48.5,67.23,44.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--link B to C--><g id="link_B_C"><path d="M166.87,44.5 C181.59,44.5 205.12,44.5 222.89,44.5 " fill="none" id="B-to-C" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="228.2,44.5,219.2,40.5,223.2,44.5,219.2,48.5,228.2,44.5" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25" x="185" y="37.9951">Text</text></g><!--SRC=[IqmkoIzISEIoShBYuYejJarEB4vLSERISD7aud9KqBLJSE5o0b7E2bOA8QaL9Lm0]--></g></svg></p></td>
+</tr>
+</tbody></table>
+<br>
+<h2 class="mume-header" id="3-%EC%83%81%EC%84%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">3. &#xC0C1;&#xC138; &#xC0AC;&#xC6A9;&#xBC95;</h2>
+
+<br>
+<h3 class="mume-header" id="31-actor-%EC%A2%85%EB%A5%98">3.1. Actor &#xC885;&#xB958;</h3>
+
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+:A:
+:B:/
+
+&apos; #[color|back:color];line:color;line.[bold|dashed|dotted];text:color
+:C: #skyblue;line:blue;line.dotted;text:magenta
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="229px" preserveAspectRatio="none" style="width:101px;height:229px;background:#FFFFFF;" version="1.1" viewBox="0 0 101 229" width="101px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="19" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M19,22 L19,49 M6,30 L32,30 M19,49 L6,64 M19,49 L32,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="14.5" y="80.0332">A</text></g><!--entity B--><g id="elem_B"><ellipse cx="81" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="79.0562" x2="88.7603" y1="21.7603" y2="12.0562"/><path d="M81,22 L81,49 M68,30 L94,30 M81,49 L68,64 M81,49 L94,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="76.5" y="80.0332">B</text></g><!--entity C--><g id="elem_C"><ellipse cx="19" cy="153.5" fill="#87CEEB" rx="8" ry="8" style="stroke:#0000FF;stroke-width:2.0;"/><path d="M19,161.5 L19,188.5 M6,169.5 L32,169.5 M19,188.5 L6,203.5 M19,188.5 L32,203.5 " fill="none" style="stroke:#0000FF;stroke-width:2.0;"/><text fill="#FF00FF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="14" y="221.0332">C</text></g><!--SRC=[itAquh9oijBdub9NK8vEpi_9Bwf9IapEjW8pOwrpClDI8MmmKoywAJydfIObiJWZ5KZbbvIafiHQbwHMb40KSLavMoae5sTN9kMKfa8qmrbw8AqGjRc9wQbv9ObS0000]--></g></svg></p></td>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+skinparam actorStyle awesome
+:A:
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="101px" preserveAspectRatio="none" style="width:78px;height:101px;background:#FFFFFF;" version="1.1" viewBox="0 0 78 101" width="78px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="35.5" cy="24.5" fill="#F1F1F1" rx="16" ry="16" style="stroke:#181818;stroke-width:1.5;"/><path d="M35.5,44.5 C39.5,44.5 42.5,44.5 46.5,40.5 C54.5,40.5 62.5,48.5 62.5,56.5 L62.5,60.5 C62.5,64.5 58.5,68.5 54.5,68.5 L16.5,68.5 C12.5,68.5 8.5,64.5 8.5,60.5 L8.5,56.5 C8.5,48.5 16.5,40.5 24.5,40.5 C28.5,44.5 31.5,44.5 35.5,44.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="31" y="84.5332">A</text></g><!--SRC=[AyxEp2j8B4hCLKXCBial2Ywfp4bLI2nFBSxFJUMoShJY0W00]--></g></svg></p></td>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+skinparam actorStyle awesome
+:A:
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="71px" preserveAspectRatio="none" style="width:47px;height:71px;background:#FFFFFF;" version="1.1" viewBox="0 0 47 71" width="47px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="20" cy="12" fill="#F1F1F1" rx="4.5" ry="4.5" style="stroke:#181818;stroke-width:0.5;"/><path d="M7.5,18.5 L7.5,23.5 L17,23.5 L17,25.7574 L7.5,35.2574 L11.7426,39.5 L20,31.2426 L28.2574,39.5 L32.5,35.2574 L23,25.7574 L23,23.5 L32.5,23.5 L32.5,18.5 L7.5,18.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="15.5" y="54.5332">A</text></g><!--SRC=[AyxEp2j8B4hCLKXCBial2Ywfp4bLyCZFoSalvx9ojE820000]--></g></svg></p></td>
+</tr>
+</tbody></table>
+<br>
+<h3 class="mume-header" id="32-use-case-%EC%82%AC%EC%9A%A9%EB%B2%95">3.2. Use case &#xC0AC;&#xC6A9;&#xBC95;</h3>
+
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+usecase A
+(B)
+
+&apos; #[color|back:color];line:color;line.[bold|dashed|dotted];text:color
+usecase C #gold;line:aqua;line.dashed;text:crimson
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="132px" preserveAspectRatio="none" style="width:119px;height:132px;background:#FFFFFF;" version="1.1" viewBox="0 0 119 132" width="119px" zoomAndPan="magnify"><defs/><g><g id="elem_A"><ellipse cx="24.7111" cy="21.1689" fill="#F1F1F1" rx="18.2111" ry="15.1689" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="20.2111" y="24.8974">A</text></g><g id="elem_B"><ellipse cx="95.7111" cy="21.1689" fill="#F1F1F1" rx="18.2111" ry="15.1689" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="91.2111" y="24.8974">B</text></g><g id="elem_C"><ellipse cx="24.5605" cy="111.4484" fill="#FFD700" rx="18.5605" ry="15.4484" style="stroke:#00FFFF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><text fill="#DC143C" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="19.5605" y="115.1769">C</text></g><!--SRC=[AorEJKuiJbLmvD9mqkJYKbTGZaxEpyalgabAJCws0ZDZhNCoyr8XR31JBpefFoUb9YMnE2CLIEMNbAIcn5gNf5QKG1HnbK8DTLPGJWUgXEXFB2nDX6Y7Q8HgAChCBSxFum80]--></g></svg></p></td>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+usecase &quot;It is very very long long\ndescription for makes it\nseveral lines!&quot; as c
+&apos; &#xB610;&#xB294;
+usecase c2 as &quot;It could be this way also.
+Could makes multiline easier,
+visibility also better.
+--
+`--`, `==`, `..Description..` possible for dividing sections
+==
+..Done..&quot;
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="152px" preserveAspectRatio="none" style="width:664px;height:152px;background:#FFFFFF;" version="1.1" viewBox="0 0 664 152" width="664px" zoomAndPan="magnify"><defs/><g><g id="elem_c"><ellipse cx="120.7229" cy="76.3551" fill="#F1F1F1" rx="114.7229" ry="40.3551" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="48.2229" y="62.4743">It is very very long long</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="47.7229" y="80.0836">description for makes it</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="78.7229" y="97.693">several lines!</text></g><g id="elem_c2"><ellipse cx="464.5191" cy="76.4235" fill="#F1F1F1" rx="194.0191" ry="70.4235" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="392.7995" y="30.107">It could be this way also.</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="377.2995" y="47.7164">Could makes multiline easier,</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="407.7995" y="65.3257">visibility also better.</text><line style="stroke:#181818;stroke-width:1.0;" x1="272.7627" x2="656.2756" y1="68.4019" y2="68.4019"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="344" x="297.2995" y="86.9351">`--`, `==`, `..Description..` possible for dividing sections</text><line style="stroke:#181818;stroke-width:1.0;" x1="277.6481" x2="651.3902" y1="94.0113" y2="94.0113"/><line style="stroke:#181818;stroke-width:1.0;" x1="279.1561" x2="649.8822" y1="96.0113" y2="96.0113"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="454.2995" y="134.1539">&#xA0;</text><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="296.2106" x2="447.5191" y1="110.816" y2="110.816"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="447.5191" y="116.0445">Done</text><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="481.5191" x2="632.8276" y1="110.816" y2="110.816"/></g><!--SRC=[HKyh4i8m4FLxYgK6GoFmLM2uGqNJT84TGjB99cMu0Wg1u8vSWgHb1lF4s_VR96Iq45Q7Y2muKRWlOBqxpT2wWSG47YDxXqSVyAel9CYnTK9PgorQTYIh2hMWWJL-ti_FumNfbsssvL0QZ4zsm9umddFPJTzHM_4ATZE_v5wJZLm2aRGmXGrCBDndAYxox8-HWeAwXgwkkmrsJLDGgVr_gL8TZbwoqzAyUk291yvFvLL58D0qa2tUaL8LV040]--></g></svg></p></td>
+</tr>
+</tbody></table>
+<br>
+<h3 class="mume-header" id="33-%ED%99%94%EC%82%B4%ED%91%9C-%EC%82%AC%EC%9A%A9%EB%B2%95">3.3. &#xD654;&#xC0B4;&#xD45C; &#xC0AC;&#xC6A9;&#xBC95;</h3>
+
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+:A:
+
+(a)
+(b)
+(c)
+
+&apos; `-` &#xB300;&#xC2DC;&#xAC00; &#xB9CE;&#xC544;&#xC9C8; &#xC218;&#xB85D; &#xC5F0;&#xACB0;&#xC120;&#xC774; &#xAE38;&#xC5B4;&#xC9D0;
+A -&gt; a
+A --&gt; b
+A ---&gt; c
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="268px" preserveAspectRatio="none" style="width:149px;height:268px;background:#FFFFFF;" version="1.1" viewBox="0 0 149 268" width="149px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="59" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M59,22 L59,49 M46,30 L72,30 M59,49 L46,64 M59,49 L72,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="54.5" y="80.0332">A</text></g><g id="elem_a"><ellipse cx="125.8704" cy="44.3963" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="121.8704" y="48.1248">a</text></g><g id="elem_b"><ellipse cx="23.8704" cy="158.3963" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="19.8704" y="162.1248">b</text></g><g id="elem_c"><ellipse cx="95.0389" cy="248.1311" fill="#F1F1F1" rx="17.5389" ry="14.6311" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="7" x="91.5389" y="251.8596">c</text></g><!--link A to a--><g id="link_A_a"><path d="M72.61,44.5 C82.55,44.5 92.5,44.5 102.45,44.5 " fill="none" id="A-to-a" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="107.65,44.5,98.65,40.5,102.65,44.5,98.65,48.5,107.65,44.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--link A to b--><g id="link_A_b"><path d="M47.05,83.73 C41.22,102.41 34.46,124.02 29.78,139.01 " fill="none" id="A-to-b" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="28.28,143.82,34.795,136.4339,29.7795,139.0501,27.1632,134.0347,28.28,143.82" style="stroke:#181818;stroke-width:1.0;"/></g><!--link A to c--><g id="link_A_c"><path d="M65.86,83.87 C73.57,127.05 85.79,195.43 91.65,228.23 " fill="none" id="A-to-c" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="92.6,233.55,94.9402,223.9832,91.7131,228.6293,87.0671,225.4022,92.6,233.55" style="stroke:#181818;stroke-width:1.0;"/></g><!--SRC=[itAqukBIIDJaqaW2ucHDBYvrXGJT18NNFGrlkkUysj2Wy7fvtvkfBM-MToYywPZnUk5SXJVJDxpQjE5Dou8tSxSelDgnuysqBM-MJ-1oLD2rKqW4KK0w2Km36SbS0000]--></g></svg></p></td>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+:A:
+:B:
+
+(a)
+(b)
+
+A -&gt; a
+
+&apos; `.` &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xBAA8;&#xC591; &#xBCC0;&#xACBD; &#xAC00;&#xB2A5;
+A .&gt; b
+
+&apos; `-|&gt;` &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xD655;&#xC7A5;&#xC758; &#xC758;&#xBBF8;&#xB85C; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;
+A -|&gt; B
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="139px" preserveAspectRatio="none" style="width:242px;height:139px;background:#FFFFFF;" version="1.1" viewBox="0 0 242 139" width="242px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="19" cy="64.78" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M19,72.78 L19,99.78 M6,80.78 L32,80.78 M19,99.78 L6,114.78 M19,99.78 L32,114.78 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="14.5" y="130.8132">A</text></g><!--entity B--><g id="elem_B"><ellipse cx="81" cy="64.78" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M81,72.78 L81,99.78 M68,80.78 L94,80.78 M81,99.78 L68,114.78 M81,99.78 L94,114.78 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="76.5" y="130.8132">B</text></g><g id="elem_a"><ellipse cx="218.8704" cy="95.1763" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="214.8704" y="98.9048">a</text></g><g id="elem_b"><ellipse cx="147.8704" cy="95.1763" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="143.8704" y="98.9048">b</text></g><!--link A to a--><g id="link_A_a"><path d="M32.52,64.05 C40.47,49.79 52.04,34.31 67.5,26.28 C106.55,6 127.08,6.74 166.5,26.28 C187.46,36.67 202.32,59.87 210.76,76.5 " fill="none" id="A-to-a" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="212.97,81,212.5983,71.1582,210.7683,76.5108,205.4156,74.6809,212.97,81" style="stroke:#181818;stroke-width:1.0;"/></g><!--link A to b--><g id="link_A_b"><path d="M32.52,64.05 C40.47,49.79 52.04,34.31 67.5,26.28 C96.87,11.02 124.7,51.24 138.66,76.53 " fill="none" id="A-to-b" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="141.1,81.06,140.3512,71.2396,138.7278,76.6586,133.3089,75.0352,141.1,81.06" style="stroke:#181818;stroke-width:1.0;"/></g><!--link A to B--><g id="link_A_B"><path d="M32.56,95.28 C37.46,95.28 42.35,95.28 47.25,95.28 " fill="none" id="A-to-B" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="47.38,88.28,67.38,95.28,47.38,102.28,47.38,88.28" style="stroke:#181818;stroke-width:1.0;"/></g><!--SRC=[itAquh9oikBYqaZKvD98qkJYSbJGjLD8vE9ILqZGIr1uCtVBcrahtqwTyMRw6eNNgrQycJPHuVNcXbURzYgysj3mkcifKBsUdK8IMBrkZHsQZhSpfxwPj_JDt1b0uHclr-zulN2EmfkcDK052Er0NGfEN000]--></g></svg></p></td>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+:A:
+
+(up)
+(down)
+(left)
+(right)
+
+a -up-&gt; up
+a -down-&gt; down
+a -left-&gt; left
+a -right-&gt; right
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="271px" preserveAspectRatio="none" style="width:222px;height:271px;background:#FFFFFF;" version="1.1" viewBox="0 0 222 271" width="222px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="105" cy="105.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M105,113.5 L105,140.5 M92,121.5 L118,121.5 M105,140.5 L92,155.5 M105,140.5 L118,155.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="100.5" y="171.5332">A</text></g><g id="elem_up"><ellipse cx="104.799" cy="21.4517" fill="#F1F1F1" rx="22.799" ry="15.4517" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="16" x="96.799" y="25.1802">up</text></g><g id="elem_down"><ellipse cx="104.8198" cy="250.4517" fill="#F1F1F1" rx="34.8198" ry="15.4517" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="88.3198" y="254.1802">down</text></g><g id="elem_left"><ellipse cx="30.9203" cy="135.9517" fill="#F1F1F1" rx="24.9203" ry="15.4517" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="19" x="21.4203" y="139.6802">left</text></g><g id="elem_right"><ellipse cx="184.7843" cy="135.9517" fill="#F1F1F1" rx="31.2843" ry="15.4517" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="170.7843" y="139.6802">right</text></g><!--reverse link up to A--><g id="link_up_A"><path d="M105,42.44 C105,57.41 105,78.38 105,96.57 " fill="none" id="up-backto-A" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="105,37.21,101,46.21,105,42.21,109,46.21,105,37.21" style="stroke:#181818;stroke-width:1.0;"/></g><!--link A to down--><g id="link_A_down"><path d="M105,175.09 C105,193.37 105,214.52 105,229.58 " fill="none" id="A-to-down" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="105,234.84,109,225.84,105,229.84,101,225.84,105,234.84" style="stroke:#181818;stroke-width:1.0;"/></g><!--reverse link left to A--><g id="link_left_A"><path d="M61.36,136 C71.33,136 81.29,136 91.26,136 " fill="none" id="left-backto-A" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="56.15,136,65.15,140,61.15,136,65.15,132,56.15,136" style="stroke:#181818;stroke-width:1.0;"/></g><!--link A to right--><g id="link_A_right"><path d="M118.75,136 C128.59,136 138.44,136 148.28,136 " fill="none" id="A-to-right" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="153.43,136,144.43,132,148.43,136,144.43,140,153.43,136" style="stroke:#181818;stroke-width:1.0;"/></g><!--SRC=[itAqukBIA2tGvD98oI_F0r8vgMabGAeeCpq3I7CvAkYM5kZQAPGMW9WWDK0EY09nGMg1N105ueBr0FbWcWi0]--></g></svg></p></td>
+</tr>
+</tbody></table>
+<br>
+<h3 class="mume-header" id="34-package-%EC%82%AC%EC%9A%A9%EB%B2%95">3.4. Package &#xC0AC;&#xC6A9;&#xBC95;</h3>
+
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+package People{
+    actor A
+    actor B
+}
+
+rectangle Tasks{
+    usecase a
+    usecase b
+}
+
+A -&gt; a
+B -&gt; b
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="206px" preserveAspectRatio="none" style="width:297px;height:206px;background:#FFFFFF;" version="1.1" viewBox="0 0 297 206" width="297px" zoomAndPan="magnify"><defs/><g><!--cluster People--><g id="cluster_People"><path d="M8.5,69.83 L58.5,69.83 A3.75,3.75 0 0 1 61,72.33 L68,93.4394 L125.5,93.4394 A2.5,2.5 0 0 1 128,95.9394 L128,197.33 A2.5,2.5 0 0 1 125.5,199.83 L8.5,199.83 A2.5,2.5 0 0 1 6,197.33 L6,72.33 A2.5,2.5 0 0 1 8.5,69.83 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="68" y1="93.4394" y2="93.4394"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="49" x="10" y="86.3632">People</text></g><!--cluster Tasks--><g id="cluster_Tasks"><rect fill="none" height="82" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="139" x="152" y="93.83"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="40" x="201.5" y="110.3632">Tasks</text></g><!--entity A--><g id="elem_A"><ellipse cx="98" cy="114.33" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M98,122.33 L98,149.33 M85,130.33 L111,130.33 M98,149.33 L85,164.33 M98,149.33 L111,164.33 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="93.5" y="180.3632">A</text></g><!--entity B--><g id="elem_B"><ellipse cx="36" cy="114.33" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M36,122.33 L36,149.33 M23,130.33 L49,130.33 M36,149.33 L23,164.33 M36,149.33 L49,164.33 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="31.5" y="180.3632">B</text></g><g id="elem_a"><ellipse cx="256.8704" cy="144.7263" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="252.8704" y="148.4548">a</text></g><g id="elem_b"><ellipse cx="185.8704" cy="144.7263" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="181.8704" y="148.4548">b</text></g><!--link A to a--><g id="link_A_a"><path d="M111.57,109.57 C129.64,68.37 164.06,8.6 204.5,31.83 C237.74,50.92 250.12,97.72 254.59,124.72 " fill="none" id="A-to-a" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="255.38,129.85,257.967,120.347,254.6208,124.908,250.0598,121.5617,255.38,129.85" style="stroke:#181818;stroke-width:1.0;"/></g><!--link B to b--><g id="link_B_b"><path d="M40.83,105.7 C46.42,79.35 58.49,46.77 84.5,31.83 C129.47,6 165.25,86.55 179.42,125.27 " fill="none" id="B-to-b" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="181.19,130.22,181.8903,120.3961,179.4893,125.5181,174.3673,123.1172,181.19,130.22" style="stroke:#181818;stroke-width:1.0;"/></g><!--SRC=[AqXCpavCJrK8ICqlo4cjvb80WiJaalmY1KSajXDNBHTNKMfoIM9UUawgGaXYSNOnH6rfSMfoOd6gGY8ABmcatb51rmuexWIYahW0]--></g></svg></p></td>
+</tr>
+</tbody></table>
+<br>
+<h3 class="mume-header" id="35-note-%EC%82%AC%EC%9A%A9%EB%B2%95">3.5. Note &#xC0AC;&#xC6A9;&#xBC95;</h3>
+
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+actor A
+actor B
+
+note top of A : Top
+note bottom of A : Bottom
+note left of A : Left
+note right of B : Right
+
+note &quot;Connected&quot; as c
+
+&apos; Use `..` symbol for link objects
+A..c
+c..B
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="263px" preserveAspectRatio="none" style="width:383px;height:263px;background:#FFFFFF;" version="1.1" viewBox="0 0 383 263" width="383px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="97" cy="100.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M97,108.5 L97,135.5 M84,116.5 L110,116.5 M97,135.5 L84,150.5 M97,135.5 L110,150.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="92.5" y="166.5332">A</text></g><!--entity B--><g id="elem_B"><ellipse cx="277" cy="100.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M277,108.5 L277,135.5 M264,116.5 L290,116.5 M277,135.5 L264,150.5 M277,135.5 L290,150.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="272.5" y="166.5332">B</text></g><g id="elem_GMN4"><path d="M76,6 L76,32.3516 A0,0 0 0 0 76,32.3516 L93,32.3516 L97,91.84 L101,32.3516 L118,32.3516 A0,0 0 0 0 118,32.3516 L118,16 L108,6 L76,6 A0,0 0 0 0 76,6 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M108,6 L108,16 L118,16 L108,6 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="82" y="24.4951">Top</text></g><g id="elem_GMN7"><path d="M65.5,230 L65.5,256.3516 A0,0 0 0 0 65.5,256.3516 L128.5,256.3516 A0,0 0 0 0 128.5,256.3516 L128.5,240 L118.5,230 L101,230 L97,170.16 L93,230 L65.5,230 A0,0 0 0 0 65.5,230 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M118.5,230 L118.5,240 L128.5,240 L118.5,230 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="71.5" y="248.4951">Bottom</text></g><g id="elem_GMN10"><path d="M6,118 L6,144.3516 A0,0 0 0 0 6,144.3516 L48,144.3516 A0,0 0 0 0 48,144.3516 L48,136 L83.23,131 L48,128 L48,128 L38,118 L6,118 A0,0 0 0 0 6,118 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M38,118 L38,128 L48,128 L38,118 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="12" y="136.4951">Left</text></g><g id="elem_GMN13"><path d="M325.5,118 L325.5,127 L290.59,131 L325.5,135 L325.5,144.3516 A0,0 0 0 0 325.5,144.3516 L376.5,144.3516 A0,0 0 0 0 376.5,144.3516 L376.5,128 L366.5,118 L325.5,118 A0,0 0 0 0 325.5,118 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M366.5,118 L366.5,128 L376.5,128 L366.5,118 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="331.5" y="136.4951">Right</text></g><g id="elem_c"><path d="M145.5,118 L145.5,144.3516 L228.5,144.3516 L228.5,128 L218.5,118 L145.5,118 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M218.5,118 L218.5,128 L228.5,128 L218.5,118 " fill="#FEFFDD" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="151.5" y="136.4951">Connected</text></g><!--link A to c--><g id="link_A_c"><path d="M110.71,131 C122.23,131 133.76,131 145.28,131 " fill="none" id="A-c" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/></g><!--link c to B--><g id="link_c_B"><path d="M228.84,131 C240.38,131 251.91,131 263.45,131 " fill="none" id="c-B" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/></g><!--SRC=[DSwn4i8W30RWFK_nNnUtF81RSNNoT2yWQ9MINidYsujWf-J_ail5UfKD8zbM3L4M3L1P8H4ZZhZAsis9gYmxcvRw98MekvzhttMR7y_6flBb5_x7XvFa7Bo6-m1Ru8aEk9M0YNb2-InE4c9z9itv3N6lkbfePFRacGrz0G00]--></g></svg></p></td>
+</tr>
+</tbody></table>
+<br>
+<h3 class="mume-header" id="36-stereotype">3.6. Stereotype</h3>
+
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+actor A &lt;&lt;People&gt;&gt;
+
+usecase a &lt;&lt;Action&gt;&gt;
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="108px" preserveAspectRatio="none" style="width:184px;height:108px;background:#FFFFFF;" version="1.1" viewBox="0 0 184 108" width="184px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="36" cy="33.6855" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M36,41.6855 L36,68.6855 M23,49.6855 L49,49.6855 M36,68.6855 L23,83.6855 M36,68.6855 L49,83.6855 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="31.5" y="99.7188">A</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="60" x="6" y="22.1094">&#xAB;People&#xBB;</text></g><g id="elem_a"><ellipse cx="139.8635" cy="55.041" fill="#F1F1F1" rx="38.8635" ry="25.9648" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="55" x="112.3635" y="54.4095">&#xAB;Action&#xBB;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="135.8635" y="72.0189">a</text></g><!--SRC=[IqmkoIzIS5ImiGb8pI_8IRMpu-8gBKvDJYnELKW4YZecbsJcvm550G00]--></g></svg></p></td>
+</tr>
+</tbody></table>
+<br>
+<h3 class="mume-header" id="37-diagram-%EC%A0%95%EB%A0%AC">3.7. Diagram &#xC815;&#xB82C;</h3>
+
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+top to bottom direction
+
+actor A
+actor B
+
+usecase a
+usecase b
+
+A --&gt; a
+B --&gt; b
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="179px" preserveAspectRatio="none" style="width:118px;height:179px;background:#FFFFFF;" version="1.1" viewBox="0 0 118 179" width="118px" zoomAndPan="magnify"><defs/><g><!--entity A--><g id="elem_A"><ellipse cx="24" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M24,22 L24,49 M11,30 L37,30 M24,49 L11,64 M24,49 L37,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="19.5" y="80.0332">A</text></g><!--entity B--><g id="elem_B"><ellipse cx="95" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M95,22 L95,49 M82,30 L108,30 M95,49 L82,64 M95,49 L108,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="90.5" y="80.0332">B</text></g><g id="elem_a"><ellipse cx="23.8704" cy="158.3963" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="19.8704" y="162.1248">a</text></g><g id="elem_b"><ellipse cx="94.8704" cy="158.3963" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="90.8704" y="162.1248">b</text></g><!--link A to a--><g id="link_A_a"><path d="M24,83.73 C24,102.02 24,123.12 24,138.06 " fill="none" id="A-to-a" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="24,143.27,28,134.27,24,138.27,20,134.27,24,143.27" style="stroke:#181818;stroke-width:1.0;"/></g><!--link B to b--><g id="link_B_b"><path d="M95,83.73 C95,102.02 95,123.12 95,138.06 " fill="none" id="B-to-b" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="95,143.27,99,134.27,95,138.27,91,134.27,95,143.27" style="stroke:#181818;stroke-width:1.0;"/></g><!--SRC=[AyalK2Z9LqZABod9prL8oInAJIx9pC_ZuafCBialKd24qavSNAN5gSc9nQaAYN1M4XUNeuAkhXrGo0bC9t410000]--></g></svg></p></td>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+left to right direction
+
+actor C
+actor D
+
+usecase c
+usecase d
+
+C --&gt; c
+D --&gt; d
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="201px" preserveAspectRatio="none" style="width:134px;height:201px;background:#FFFFFF;" version="1.1" viewBox="0 0 134 201" width="134px" zoomAndPan="magnify"><defs/><g><!--entity C--><g id="elem_C"><ellipse cx="19" cy="127" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M19,135 L19,162 M6,143 L32,143 M19,162 L6,177 M19,162 L32,177 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="14" y="193.0332">C</text></g><!--entity D--><g id="elem_D"><ellipse cx="19" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M19,22 L19,49 M6,30 L32,30 M19,49 L6,64 M19,49 L32,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="14" y="80.0332">D</text></g><g id="elem_c"><ellipse cx="110.5389" cy="157.6311" fill="#F1F1F1" rx="17.5389" ry="14.6311" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="7" x="107.0389" y="161.3596">c</text></g><g id="elem_d"><ellipse cx="110.3704" cy="44.3963" fill="#F1F1F1" rx="17.8704" ry="14.8963" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="106.3704" y="48.1248">d</text></g><!--link C to c--><g id="link_C_c"><path d="M32.82,157.5 C47.1,157.5 70.43,157.5 87.62,157.5 " fill="none" id="C-to-c" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="92.73,157.5,83.73,153.5,87.73,157.5,83.73,161.5,92.73,157.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--link D to d--><g id="link_D_d"><path d="M32.82,44.5 C47.02,44.5 70.15,44.5 87.3,44.5 " fill="none" id="D-to-d" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="92.41,44.5,83.41,40.5,87.41,44.5,83.41,48.5,92.41,44.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--SRC=[oqbDAr4eoLSeoapFA558oInAJIx9pC_ZuafCBialKd26qYvSNAN5gSc9nQaAoN1M2XUNiuAkhXrGo0LCft010000]--></g></svg></p></td>
+</tr>
+</tbody></table>
+<br>
+<h3 class="mume-header" id="38-json-data-%ED%91%9C%ED%98%84">3.8. JSON data &#xD45C;&#xD604;</h3>
+
+<br>
+<table>
+<tbody><tr>
+<th>Code</th><th>Render</th>
+</tr>
+<tr>
+<td>
+<pre data-role="codeBlock" data-info="text" class="language-text">@startuml
+
+json J{
+    &quot;Name&quot; : &quot;A&quot;,
+    &quot;Score&quot; : [&quot;90&quot;, &quot;80&quot;],
+    &quot;Class&quot; : [&quot;Math&quot;, &quot;History&quot;]
+}
+
+@enduml
+</pre></td>
+<td>
+<p><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="150px" preserveAspectRatio="none" style="width:121px;height:150px;background:#FFFFFF;" version="1.1" viewBox="0 0 121 150" width="121px" zoomAndPan="magnify"><defs/><g><rect fill="#F1F1F1" height="129.6563" style="stroke:#181818;stroke-width:0.5;" width="100" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="6" x="54" y="23.5332">J</text><line style="stroke:#181818;stroke-width:1.0;" x1="54" x2="54" y1="28.6094" y2="136.6563"/><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="107" y1="28.6094" y2="28.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="12" y="45.1426">Name</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="59" y="45.1426">A</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="107" y1="50.2188" y2="50.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="12" y="66.752">Score</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="16" x="59" y="66.752">90</text><line style="stroke:#181818;stroke-width:1.0;" x1="54" x2="107" y1="71.8281" y2="71.8281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="16" x="59" y="88.3613">80</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="107" y1="93.4375" y2="93.4375"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="12" y="109.9707">Class</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="59" y="109.9707">Math</text><line style="stroke:#181818;stroke-width:1.0;" x1="54" x2="107" y1="115.0469" y2="115.0469"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="59" y="131.5801">History</text><!--SRC=[oohEprFmgkPI008blyJSL2K5AmKbHoKTY4XmSduHM2XQoT90IKT1oS90AHOgvvoJM5mCaVDDBCa0oNfa5fVa5rKgnNBLSW40]--></g></svg></p></td>
+</tr>
+</tbody></table>
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#1-introduction" class="md-toc-link">
+            <ol>
+<li>Introduction</li>
+</ol>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#2-&#xAE30;&#xBCF8;-&#xC0AC;&#xC6A9;&#xBC95;" class="md-toc-link">
+            <ol start="2">
+<li>&#xAE30;&#xBCF8; &#xC0AC;&#xC6A9;&#xBC95;</li>
+</ol>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#3-&#xC0C1;&#xC138;-&#xC0AC;&#xC6A9;&#xBC95;" class="md-toc-link"><ol start="3">
+<li>&#xC0C1;&#xC138; &#xC0AC;&#xC6A9;&#xBC95;</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-actor-&#xC885;&#xB958;" class="md-toc-link">
+            <p>3.1. Actor &#xC885;&#xB958;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#32-use-case-&#xC0AC;&#xC6A9;&#xBC95;" class="md-toc-link">
+            <p>3.2. Use case &#xC0AC;&#xC6A9;&#xBC95;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#33-&#xD654;&#xC0B4;&#xD45C;-&#xC0AC;&#xC6A9;&#xBC95;" class="md-toc-link">
+            <p>3.3. &#xD654;&#xC0B4;&#xD45C; &#xC0AC;&#xC6A9;&#xBC95;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#34-package-&#xC0AC;&#xC6A9;&#xBC95;" class="md-toc-link">
+            <p>3.4. Package &#xC0AC;&#xC6A9;&#xBC95;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#35-note-&#xC0AC;&#xC6A9;&#xBC95;" class="md-toc-link">
+            <p>3.5. Note &#xC0AC;&#xC6A9;&#xBC95;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#36-stereotype" class="md-toc-link">
+            <p>3.6. Stereotype</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#37-diagram-&#xC815;&#xB82C;" class="md-toc-link">
+            <p>3.7. Diagram &#xC815;&#xB82C;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#38-json-data-&#xD45C;&#xD604;" class="md-toc-link">
+            <p>3.8. JSON data &#xD45C;&#xD604;</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
