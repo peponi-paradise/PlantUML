@@ -117,3 +117,38 @@ ro is End
 <br>
 
 ## 3. 상세 사용법
+
+<br>
+
+<table>
+<tr>
+<th>Code</th><th>Render</th>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+
+```plantuml
+@startuml
+clock "Clock" as A with period 5
+binary "DIO" as D
+
+@5
+A->D: hi?
+D is high
+
+@enduml
+```
+</td>
+</tr>
+
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
